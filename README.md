@@ -19,6 +19,7 @@ Toteutetut luokat:
     - Varauksen tekemiseen tarvitaan käyttäjän id, huone sekä varauksen alku- ja loppuaika
     - Singleton-luokka mahdollistaa useiden käyttäjien tekevän varauksia samanaikaisesti, ilman että päällekkäisiä varauksia pääsee syntymään. 
     - Varauksille voidaan asettaa maksimipituus sekä aikaisin alkamisaika ja myöhäisin loppumisaika
+    - Järjestelmä tallentaa asiakkaan uniikin ID:n varausta tehdessä, ja tätä ID:tä käytetään varausten yhdistämiseen asiakkaaseen. Järjestelmä ei tallenna muita asiakkaan tietoja tietoturvasyistä, vaan mielestäni tämä kuuluu järjestelmän implementoivan sovelluksen tehtäviin. 
 
 - SortedReservationList
     - Luokka, joka säilöö varauksia. Varaukset on säilötty aikajärjestyksessä, jotta niiden etsiminen olisi nopeampaa. 
