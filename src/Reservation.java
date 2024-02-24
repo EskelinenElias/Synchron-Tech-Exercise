@@ -21,8 +21,8 @@ public class Reservation {
         } else if (room == null) {
             throw new IllegalArgumentException("Reservation must include a room.");
         }
-        // Generate unique reservation ID
-        this.reservationId = UUID.randomUUID().toString();
+        // Construct instance
+        this.reservationId = UUID.randomUUID().toString(); // Generate unique reservation ID
         this.userId = userId; 
         this.room = room;
         this.startTime = startTime;
@@ -31,24 +31,23 @@ public class Reservation {
 
     // Secondary constructor that can construct an instance from String format start and end time
     public Reservation(String userId, Room room, String startTime, String endTime) {
+        // Parse the reservation start time and end time
+        this.startTime = Instant.parse(startTime);
+        this.endTime = Instant.parse(endTime);
         // Validate inputs
         if (userId.isEmpty()) {
             throw new IllegalArgumentException("Invalid user ID.");
         } else if (room == null) {
             throw new IllegalArgumentException("Reservation must include a room.");
-        }
-        // Generate unique reservation ID
-        this.reservationId = UUID.randomUUID().toString(); 
-        this.userId = userId; 
-        this.room = room;
-        this.startTime = Instant.parse(startTime);
-        this.endTime = Instant.parse(endTime);
-        // Check if end time is before start time or equal
-        if (this.endTime.isBefore(this.startTime)) {
+        } else if (this.endTime.isBefore(this.startTime)) {
             throw new IllegalArgumentException("Reservation end time cannot be before start time.");
         } else if (this.endTime.equals(this.startTime)) {
             throw new IllegalArgumentException("Reservation end time cannot be equal to start time.");
         }
+        // Construct instance
+        this.reservationId = UUID.randomUUID().toString(); // Generate unique reservation ID
+        this.userId = userId; 
+        this.room = room;
     }
 
     // Getter for reservation ID

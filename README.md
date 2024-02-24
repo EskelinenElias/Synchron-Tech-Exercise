@@ -18,6 +18,7 @@ Toteutetut luokat:
     - Sisältää metodeja saatavilla olevien huoneiden etsimiseen, varauksen tekemiseen ja varauken poistamiseen
     - Varauksen tekemiseen tarvitaan käyttäjän id, huone sekä varauksen alku- ja loppuaika
     - Singleton-luokka mahdollistaa useiden käyttäjien tekevän varauksia samanaikaisesti, ilman että päällekkäisiä varauksia pääsee syntymään. 
+    - Varauksille voidaan asettaa maksimipituus sekä aikaisin alkamisaika ja myöhäisin loppumisaika
 
 - SortedReservationList
     - Luokka, joka säilöö varauksia. Varaukset on säilötty aikajärjestyksessä, jotta niiden etsiminen olisi nopeampaa. 
@@ -25,7 +26,7 @@ Toteutetut luokat:
 
 - Reservation-luokka
     - Yksittäisen varauksen tiedot: uniikki id, varauksen tehneen käyttäjän id, huone, varauksen alku- ja loppuaika.
-    
+
 - Room-luokka
     - Yksittäisen huoneen tiedot: uniikki id, huoneen nimi, koko ja kuvaus.
 
