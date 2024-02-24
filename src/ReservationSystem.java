@@ -88,6 +88,11 @@ public class ReservationSystem {
         return reservationsForRoom.size() > 0;  
     }
 
+    // Method for listing reservations by user
+    public SortedReservationList getReservationsByUser(String userId) {
+        return reservations.getReservationsByUserId(userId); 
+    }
+
     // Method to make a new reservation
     public synchronized boolean makeReservation(String userId, Room room, Instant startTime, Instant endTime) {
         // Validate input parameters
